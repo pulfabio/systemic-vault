@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabio Pulito — Systemic Architect</title>
+    <style>
+        /* Minimalist, High-Contrast Brutalist Design */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #111111;
+            --accent-muted: #666666;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: var(--accent-muted);
+            margin-bottom: 24px;
+        }
+
+        .subtitle a {
+            color: var(--accent-muted);
+            text-decoration: underline;
+        }
+
+        .subtitle a:hover {
+            color: var(--text-color);
+        }
+
+        .paradigm {
+            font-size: 17px;
+            font-weight: 400;
+            letter-spacing: -0.1px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 60px 0;
+        }
+
+        /* Case Files Accordion Elements */
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-muted);
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        details {
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+        }
+
+        details:first-of-type {
+            border-top: 1px solid var(--border-color);
+        }
+
+        summary {
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "→";
+            font-weight: 300;
+            color: var(--accent-muted);
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(90deg);
+        }
+
+        .case-content {
+            padding-top: 16px;
+            font-size: 15px;
+            color: #333333;
+        }
+
+        .future-case {
+            color: var(--accent-muted);
+            cursor: not-allowed;
+        }
+
+        .future-case summary::after {
+            content: "◦";
+        }
+
+        /* Boundary / Footer */
+        .boundary-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .boundary-list li {
+            margin-bottom: 12px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .boundary-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: var(--accent-muted);
+            font-size: 10px;
+            top: 2px;
+        }
+
+        .email-link {
+            color: var(--text-color);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--text-color);
+        }
+
+        /* Nomenclature Section */
+        #nomenclature {
+            scroll-margin-top: 40px;
+        }
+
+        .nomenclature-text {
+            font-size: 14px;
+            color: var(--accent-muted);
+            text-align: justify;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER & IDENTIFY -->
+        <header>
+            <h1>Systemic Architect</h1>
+            <div class="subtitle">
+                (If you happen to be interested in the precise etymology or underlying geometry of this title, you can <a href="#nomenclature">review the logic here</a>.)
+            </div>
+            <div class="paradigm">
+                Every complex human interaction, early-stage business blueprint, and digital workflow is an architectural system. Where there is stagnation or friction, I isolate the underlying logic flaws. Where there is a new proposal or vision, I provide strategic divergence—introducing alternative geometries, unhandled variables, and architectural solutions that internal teams are too close to the canvas to see.
+            </div>
+        </header>
+
+        <!-- VAULT / CASE FILES -->
+        <main>
+            <div class="section-title">Case Files</div>
+            
+            <details>
+                <summary>[Case 01] The Blind Spot in the Premium Experience (Hospital UX Audit)</summary>
+                <div class="case-content">
+                    <p><em>[Your raw, masterfully written forensic breakdown of the hospital system goes here. This text expands cleanly when clicked.]</em></p>
+                </div>
+            </details>
+
+            <details class="future-case" onclick="return false;">
+                <summary>[Case 02] Strategic Divergence: Early-Stage Startup Blueprint</summary>
+                <div class="case-content">
+                    <p><em>[Locked. Vault file under development.]</em></p>
+                </div>
+            </details>
+
+            <details class="future-case" onclick="return false;">
+                <summary>[Case 03] Interpersonal Geometry: Resolving Asymmetric Friction</summary>
+                <div class="case-content">
+                    <p><em>[Locked. Vault file under development.]</em></p>
+                </div>
+            </details>
+        </main>
+
+        <hr>
+
+        <!-- BOUNDARY / SYSTEM SUBMISSIONS -->
+        <section>
+            <div class="section-title">System State Submissions</div>
+            <p>Available exclusively for independent, high-level structural reviews. I accept engagements across three distinct domains:</p>
+            <ul class="boundary-list">
+                <li><strong>Operational Architecture:</strong> Diagnostics of system friction, communication breakdowns, and premium brand-experience logic leaks.</li>
+                <li><strong>Strategic Blueprints:</strong> Stress-testing new proposals, business models, and conceptual ideas to uncover hidden risks and design optimized alternatives.</li>
+                <li><strong>Interpersonal Geometry:</strong> Deconstructing complex relational or structural friction points within partnerships and organizations.</li>
+            </ul>
+            <p>All initial assessments are processed asynchronously. To submit a detailed overview of your system's current state for diagnostic review: <a href="mailto:systemic@fabiopulito.com" class="email-link">systemic@fabiopulito.com</a></p>
+        </section>
+
+        <hr>
+
+        <!-- NOMENCLATURE FOOTNOTE -->
+        <footer id="nomenclature">
+            <div class="section-title">On the Nomenclature</div>
+            <p class="nomenclature-text">
+                Unlike a <em>Systems</em> Architect who constructs digital infrastructure, a <em>Systemic</em> Architect analyzes the entire organism. This role rejects the modern, artificial division between the mechanical and the human. Drawing from the classical Greek <em>architekton</em> (master builder) and the philosophical framework of systemism, this practice approaches workflows, interpersonal dynamics, and strategic ideas as a single, continuous canvas of feedback loops and structural logic.
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
