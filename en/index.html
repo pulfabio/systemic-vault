@@ -51,25 +51,49 @@
             letter-spacing: -0.5px;
         }
 
-        .subtitle {
-            font-size: 14px;
-            color: var(--accent-muted);
-            margin-bottom: 24px;
+        .title-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 16px;
         }
 
-        .subtitle a {
+        .title-row h1 {
+            margin: 0;
+        }
+
+        .nomenclature-link {
+            font-size: 12px;
+            font-weight: 400;
             color: var(--accent-muted);
             text-decoration: underline;
+            letter-spacing: 0;
         }
 
-        .subtitle a:hover {
+        .nomenclature-link:hover {
             color: var(--text-color);
         }
 
+        .oneliner {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 0;
+            letter-spacing: -0.2px;
+            line-height: 1.45;
+            max-width: 36em;
+        }
+
+        .approach {
+            margin-bottom: 60px;
+        }
+
         .paradigm {
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 400;
             letter-spacing: -0.1px;
+            color: #333333;
+            line-height: 1.65;
         }
 
         hr {
@@ -188,14 +212,22 @@
         <!-- HEADER & IDENTIFY -->
         <header>
             <span style="font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; display: block; margin-bottom: 4px; font-size: 13px; color: var(--accent-muted);">Fabio Pulito</span>
-            <h1>Systemic Architect</h1>
-            <div class="subtitle">
-                (If you happen to be interested in the precise etymology or underlying geometry of this title, you can <a href="#nomenclature">review the logic here</a>.)
+            <div class="title-row">
+                <h1>Systemic Architect</h1>
+                <a class="nomenclature-link" href="#nomenclature">why this title</a>
             </div>
-            <div class="paradigm">
-                Every complex human interaction, early-stage business blueprint, and digital workflow is an architectural system. Where there is stagnation or friction, I isolate the underlying logic flaws. Where there is a new proposal or vision, I provide strategic divergence—introducing alternative geometries, unhandled variables, and architectural solutions that internal teams are too close to the canvas to see.
+            <div class="oneliner">
+                Independent written analysis of stuck workflows, new plans, and human friction.
             </div>
         </header>
+
+        <!-- APPROACH -->
+        <section class="approach">
+            <div class="section-title">Approach</div>
+            <div class="paradigm">
+                Every complex human interaction, early plan, and digital workflow has a structure. Where things are stuck, I find the weak logic. Where a new idea is taking shape, I bring other angles, missed risks, and clearer paths — the kind of view that is hard to get when you are too close to the canvas.
+            </div>
+        </section>
 
         <!-- VAULT / CASE FILES -->
         <main>
@@ -249,14 +281,16 @@
         <!-- BOUNDARY / SYSTEM SUBMISSIONS -->
         <section>
             <div class="section-title">System State Submissions</div>
-            <p>Available exclusively for independent, high-level structural reviews. I accept engagements across three distinct domains:</p>
+            <p>Typical engagement: you send the situation, or we talk once so I can understand it; I work on it alone; then you receive a clear written map of what’s wrong or incomplete, what else is possible, and what to do next.</p>
+            <p>Fee for a standard engagement: <strong>€2,000–2,500</strong>, depending on complexity. Further work only if both sides want it.</p>
+            <p>I take on three kinds of situations:</p>
             <ul class="boundary-list">
-                <li><strong>Operational Architecture:</strong> Diagnostics of system friction, communication breakdowns, and premium brand-experience logic leaks.</li>
-                <li><strong>Strategic Blueprints:</strong> Stress-testing new proposals, business models, and conceptual ideas to uncover hidden risks and design optimized alternatives.</li>
-                <li><strong>Interpersonal Geometry:</strong> Deconstructing complex relational or structural friction points within partnerships and organizations.</li>
+                <li><strong>Operational architecture</strong> — when a workflow or process creates friction, breaks trust, or fails in the moments that matter</li>
+                <li><strong>Strategic blueprints</strong> — early plans and ideas: weak points, alternatives, and clearer paths forward</li>
+                <li><strong>Interpersonal geometry</strong> — when people are stuck or talking past each other; a clear outside view of what is going on and what may help</li>
             </ul>
-            <p>My methodology rejects performative corporate meetings, scheduled status calls, and superficial administrative alignment. Depending on the nature of the friction, our interaction adapts: we may engage in a high-intensity, active dialogue to unpack the human variables, or work entirely asynchronously through a detailed transfer of documentation. Initial contact begins with a brief email exchange to determine if your system’s current state is a match for my radar.</p>
-            <p>To submit an overview of your situation: <a href="mailto:systemic@fabiopulito.com" class="email-link">systemic@fabiopulito.com</a></p>
+            <p>I prefer to keep contact useful and light: a real conversation when it helps, written exchange when that is enough, and both when the case needs it. I am easy to reach when something matters. I simply don’t run on standing status meetings or all-day chat.</p>
+            <p>First contact by email: <a href="mailto:systemic@fabiopulito.com" class="email-link">systemic@fabiopulito.com</a></p>
         </section>
 
         <hr>
