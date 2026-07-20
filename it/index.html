@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabio Pulito — Architetto Sistemico</title>
+
+    <!-- SEO & Discovery -->
+    <meta name="description" content="Analisi indipendenti su flussi di lavoro bloccati, nuovi piani e attriti interpersonali.">
+    <meta name="keywords" content="analisi sistemica, attrito operativo, modelli strategici, geometrie interpersonali, diagnosi scritta">
+    <meta name="author" content="Fabio Pulito">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / LinkedIn Preview Cards -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://systemic.fabiopulito.com/it/">
+    <meta property="og:title" content="Fabio Pulito — Architetto Sistemico">
+    <meta property="og:description" content="Analisi indipendenti su flussi di lavoro bloccati, nuovi piani e attriti interpersonali.">
+    
+    <style>
+        /* Minimalist, High-Contrast Brutalist Design */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #111111;
+            --accent-muted: #666666;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .title-row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .title-row h1 {
+            margin: 0;
+        }
+
+        .nomenclature-link {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--accent-muted);
+            text-decoration: underline;
+            letter-spacing: 0;
+        }
+
+        .nomenclature-link:hover {
+            color: var(--text-color);
+        }
+
+        .oneliner {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 0;
+            letter-spacing: -0.2px;
+            line-height: 1.45;
+            max-width: 36em;
+        }
+
+        /* Who-block: removable without breaking layout */
+        .who-line {
+            font-size: 15px;
+            font-weight: 400;
+            color: #333333;
+            letter-spacing: -0.1px;
+            line-height: 1.55;
+            max-width: 36em;
+            margin: 14px 0 0 0;
+        }
+
+        .about-link-row {
+            margin-top: 12px;
+        }
+
+        .approach {
+            margin-bottom: 60px;
+        }
+
+        .paradigm {
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: -0.1px;
+            color: #333333;
+            line-height: 1.65;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid var(--border-color);
+            margin: 60px 0;
+        }
+
+        /* Case Files Accordion Elements */
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-muted);
+            margin-bottom: 24px;
+            font-weight: 600;
+        }
+
+        details {
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+        }
+
+        details:first-of-type {
+            border-top: 1px solid var(--border-color);
+        }
+
+        summary {
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "→";
+            font-weight: 300;
+            color: var(--accent-muted);
+            transition: transform 0.2s ease;
+        }
+
+        details[open] summary::after {
+            transform: rotate(90deg);
+        }
+
+        .case-content {
+            padding-top: 16px;
+            font-size: 15px;
+            color: #333333;
+        }
+
+        .future-case {
+            color: var(--accent-muted);
+            cursor: not-allowed;
+        }
+
+        .future-case summary::after {
+            content: "◦";
+        }
+
+        /* Boundary / Footer */
+        .boundary-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .boundary-list li {
+            margin-bottom: 12px;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .boundary-list li::before {
+            content: "▪";
+            position: absolute;
+            left: 0;
+            color: var(--accent-muted);
+            font-size: 10px;
+            top: 2px;
+        }
+
+        .email-link {
+            color: var(--text-color);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--text-color);
+        }
+
+        /* Nomenclature Section */
+        #nomenclature {
+            scroll-margin-top: 40px;
+        }
+
+        .nomenclature-text {
+            font-size: 14px;
+            color: var(--accent-muted);
+            text-align: justify;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HEADER & IDENTIFY -->
+        <header>
+            <span style="font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; display: block; margin-bottom: 4px; font-size: 13px; color: var(--accent-muted);">Fabio Pulito</span>
+            <div class="title-row">
+                <h1>Architetto Sistemico</h1>
+                <a class="nomenclature-link" href="#nomenclature">perché questo titolo</a>
+            </div>
+            <div class="oneliner">
+                Analisi indipendenti su flussi di lavoro bloccati, nuovi piani e attriti interpersonali.
+            </div>
+            <p class="who-line">
+                Ragiono in termini strutturali e umani al tempo stesso: ingegnere per formazione, plasmato da anni all’estero e letture trasversali. Scompongo un argomento finché non emerge una chiave di lettura originale. A quel punto, la traduco in testo.
+            </p>
+            <div class="about-link-row">
+                <a class="nomenclature-link" href="about/">Chi sono</a>
+            </div>
+        </header>
+
+        <!-- APPROACH -->
+        <section class="approach">
+            <div class="section-title">Approccio</div>
+            <div class="paradigm">
+                Ogni interazione umana complessa, piano iniziale o flusso operativo possiede una struttura. Dove i meccanismi si inceppano, trovo la falla logica. Quando una nuova idea prende forma, porto prospettive diverse, rischi trascurati o percorsi più chiari — una panoramica difficile da cogliere quando si è troppo vicini alla tela.
+            </div>
+        </section>
+
+        <!-- VAULT / CASE FILES -->
+        <main>
+            <div class="section-title">Dossier</div>
+            
+            <details>
+                <summary>01 / IL PUNTO CIECO NELL’ESPERIENZA PREMIUM</summary>
+                <div style="padding-top: 15px; line-height: 1.6;">
+                    <p><strong>La situazione:</strong> Un ospedale internazionale d’eccellenza. Un percorso terapeutico continuo per un paziente fidelizzato: le prime sessioni fatturate tramite assicurazione aziendale, le successive pagate di tasca propria. Stessa persona, stesse cure, stesso luogo.</p>
+                    
+                    <p>Poi, la burocrazia rende visibile la spaccatura. Le fatture assicurative mostrano una tariffa aziendale fortemente scontata; quelle a carico del paziente applicano il prezzo pieno al dettaglio per l’identico trattamento. La logica dei prezzi interni cessa di essere interna — e una relazione premium decade improvvisamente in una logica a doppio binario.</p>
+                    
+                    <p>Quando il problema viene sottoposto all’Ufficio Esperienza Paziente — lo sportello preposto a tutelare il lato umano di un marchio di lusso — la risposta non è orientata alla risoluzione del danno. Si limitano a recitare il sistema: queste sono le regole; questo è corretto; la tua esperienza non è rilevante.</p>
+                    
+                    <p><strong>Cosa ho fatto:</strong> Ho analizzato la questione dall’esterno. Ho separato il risentimento emotivo dalla struttura sottostante: la fatturazione aveva gestito un unico paziente su due binari di pagamento separati, rendendo inevitabile l’evidenza del divario all’incrocio dei flussi; l’ufficio che avrebbe dovuto proteggere l’esperienza si è limitato a ribadire le regole contabili, invece di trattare il disservizio come un fallimento sistemico che richiedeva un vero responsabile.</p>
+                    
+                    <p><strong>Il risultato:</strong> Una mappa scritta e chiara di due fallimenti simultanei: fatture che esponevano i prezzi interni dell’ospedale compromettendo la percezione premium, e un Ufficio Esperienza Paziente che ha reagito come un computer impallato. La cifra in gioco in questo caso era modesta; il rischio per un marchio di lusso non lo è — specialmente se un cliente influente si scontra con lo stesso punto di attrito. La mappa ha tracciato passi concreti per il futuro: nascondere i divari tariffari interni sui conti misti; scalare le vere falle di sistema a chi gestisce rischi e operazioni, anziché declassarle a reclami ordinari. <em>Un sistema è premium solo quanto lo è il suo caso limite più raro.</em></p>
+                </div>
+            </details>
+
+            <details>
+                <summary>02 / MODELLI STRATEGICI: PIANO INIZIALE, SECONDA PROSPETTIVA</summary>
+                <div style="padding-top: 15px; line-height: 1.6;">
+                    <p><strong>La situazione:</strong> Un’idea software alle prime battute — un’architettura ambiziosa, ancora quasi interamente su carta. Chi la stava sviluppando cercava uno sguardo esterno al progetto per valutarne l’impianto prima di impegnare tempo e capitali significativi.</p>
+                    
+                    <p><strong>Cosa ho fatto:</strong> Ho analizzato l’intera progettazione, non solo la versione da presentazione. Ho individuato dove risiedono realmente le complessità: le dipendenze reciproche, i presupposti impliciti, le conseguenze in caso di ritardo o errore su un singolo tassello. Ho evidenziato i punti deboli, i rischi trascurati e alcuni percorsi più chiari, difficili da scorgere dall’interno del lavoro.</p>
+                    
+                    <p><strong>Il risultato:</strong> Un quadro scritto e più nitido dell’idea — gli elementi solidi, le zone d’ombra ancora da definire e le decisioni da prendere prima dello sviluppo. Nessun cronoprogramma di prodotto. Una seconda prospettiva su un piano ancora in divenire.</p>
+                </div>
+            </details>
+
+            <details>
+                <summary>03 / GEOMETRIE INTERPERSONALI: QUANDO LA COMUNICAZIONE SI INTERROMPE</summary>
+                <div style="padding-top: 15px; line-height: 1.6;">
+                    <p><strong>La situazione:</strong> Una situazione di stallo tra persone costrette a coesistere sul piano professionale o personale — dialoghi a vuoto, fiducia ai minimi termini, la certezza reciproca che il problema sia l’altro.</p>
+                    
+                    <p><strong>Cosa ho fatto:</strong> Ho ascoltato le parti separatamente dove necessario, senza prendere posizione nel conflitto. Ho tracciato i punti di rottura della visione condivisa: i termini dell’accordo secondo ciascun punto di vista, il non detto e i motivi strutturali per cui il confronto continuava a fallire.</p>
+                    
+                    <p><strong>Il risultato:</strong> Uno sguardo esterno e lucido sulla situazione di blocco — nessun verdetto su chi abbia ragione, ma una mappa pragmatica dei punti di attrito e alcune mosse concrete per provare a riaprire il dialogo. La riservatezza resta assoluta; nomi e dettagli non compaiono sulla pagina.</p>
+                </div>
+            </details>
+        </main>
+
+        <div style="height: 60px;"></div>
+
+        <!-- BOUNDARY / SYSTEM SUBMISSIONS -->
+        <section>
+            <div class="section-title">Lavorare con me</div>
+            <p>Incarico tipico: mi descrivi la situazione, o ne parliamo direttamente per metterla a fuoco. Ci lavoro in autonomia, restando in contatto per eventuali aggiornamenti utili se il caso lo richiede. Alla fine, ricevi un quadro chiaro di ciò che non funziona o è incompleto, delle alternative possibili e delle mosse successive. La mappa è impostata come i miei Dossier: la situazione, la struttura sottostante e i prossimi passi concreti.</p>
+            <p>A lavoro avviato, i contatti restano snelli e mirati. Quando ce n’è bisogno, è facile raggiungermi. Semplicemente, evito riunioni fisse di stato avanzamento o chat a ritmo continuo.</p>
+            <p>Per un incarico standard chiedo 2.500 €. Per i casi più impegnativi presento un preventivo prima di iniziare.</p>
+            <p>Una volta inquadrato il caso, ti confermo la tempistica.</p>
+            <p>Ulteriori sviluppi solo se lo vogliamo entrambi.</p>
+            <p>Intervengo in tre tipi di situazioni:</p>
+            <ul class="boundary-list">
+                <li><strong>Architetture operative</strong> — quando un flusso operativo crea attrito, tradisce la fiducia o fallisce nei momenti che contano.</li>
+                <li><strong>Modelli strategici</strong> — piani e idee iniziali: punti deboli, alternative e percorsi più chiari. Questo include se e come integrare l’IA in un contesto professionale: benefici, costi, rischi e trappole prima di investire.</li>
+                <li><strong>Geometrie interpersonali</strong> — quando la comunicazione si disallinea o i rapporti si irrigidiscono, offro uno sguardo esterno e lucido su cosa sta succedendo e su come sbloccarlo.</li>
+            </ul>
+            <p>Per iniziare, scrivimi a: <a href="mailto:systemic@fabiopulito.com" class="email-link">systemic@fabiopulito.com</a></p>
+        </section>
+
+        <hr>
+
+        <!-- NOMENCLATURE FOOTNOTE -->
+        <footer id="nomenclature">
+            <div class="section-title">Sulla nomenclatura</div>
+            <p class="nomenclature-text">
+                A differenza di un <em>Architetto di Sistemi</em>, focalizzato sulle infrastrutture digitali, un <em>Architetto Sistemico</em> legge l’intero organismo aziendale. È un ruolo che non separa la componente meccanica da quella umana. Partendo dal greco <em>architekton</em> (mastro costruttore) e dal principio del sistemismo — secondo cui le parti hanno senso solo all’interno del tutto — questa figura tratta flussi operativi, dinamiche interpersonali e idee strategiche come un unico campo d’azione fatto di struttura e feedback.
+            </p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
