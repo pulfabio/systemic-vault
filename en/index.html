@@ -44,6 +44,42 @@
             margin-bottom: 60px;
         }
 
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+
+        .site-name {
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 13px;
+            color: var(--accent-muted);
+        }
+
+        .lang-switch select {
+            font-family: inherit;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            color: var(--accent-muted);
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 0;
+            padding: 2px 4px;
+            cursor: pointer;
+        }
+
+        .lang-switch select:hover,
+        .lang-switch select:focus {
+            color: var(--text-color);
+            border-color: var(--text-color);
+            outline: none;
+        }
+
         h1 {
             font-size: 28px;
             font-weight: 700;
@@ -226,7 +262,15 @@
         
         <!-- HEADER & IDENTIFY -->
         <header>
-            <span style="font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; display: block; margin-bottom: 4px; font-size: 13px; color: var(--accent-muted);">Fabio Pulito</span>
+            <div class="top-bar">
+                <span class="site-name">Fabio Pulito</span>
+                <div class="lang-switch">
+                    <select aria-label="Language" onchange="if (this.value) location.href = this.value;">
+                        <option value="/en/" selected>EN</option>
+                        <option value="/it/">IT</option>
+                    </select>
+                </div>
+            </div>
             <div class="title-row">
                 <h1>Systemic Architect</h1>
                 <a class="nomenclature-link" href="#nomenclature">why this title</a>
