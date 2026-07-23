@@ -237,10 +237,11 @@
             if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'Home' || e.key === 'End' || e.key === 'PageUp' || e.key === 'PageDown') {
                 suppressChange = true;
             }
-        });
-
-        sel.addEventListener('keyup', function (e) {
-            if (e.key === 'Enter') go();
+            if (e.key === 'Enter') {
+                // Stop the native menu from consuming the first Enter.
+                e.preventDefault();
+                go();
+            }
         });
 
         sel.addEventListener('change', function () {
