@@ -225,7 +225,7 @@
         var sel = document.querySelector('.lang-switch select');
         if (!sel) return;
         var initial = sel.value;
-        var fromKeyboard = false;
+        var usedPointer = false;
 
         function go() {
             var next = sel.value;
@@ -233,24 +233,20 @@
             window.location.href = next;
         }
 
+        sel.addEventListener('pointerdown', function () {
+            usedPointer = true;
+        });
+
         sel.addEventListener('keydown', function (e) {
-            if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'Home' || e.key === 'End' || e.key === 'PageUp' || e.key === 'PageDown') {
-                fromKeyboard = true;
-            }
-            if (e.key === 'Enter') {
-                fromKeyboard = false;
-                go();
-            }
+            usedPointer = false;
+            if (e.key === 'Enter') go();
         });
 
         sel.addEventListener('change', function () {
-            if (fromKeyboard) return;
-            go();
+            if (usedPointer) go();
         });
 
         sel.addEventListener('blur', function () {
-            if (!fromKeyboard) return;
-            fromKeyboard = false;
             go();
         });
     })();
