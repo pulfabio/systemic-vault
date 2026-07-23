@@ -11,6 +11,10 @@
     <meta name="author" content="Fabio Pulito">
     <meta name="robots" content="index, follow">
 
+    <link rel="alternate" hreflang="en" href="https://systemic.fabiopulito.com/en/">
+    <link rel="alternate" hreflang="it" href="https://systemic.fabiopulito.com/it/">
+    <link rel="alternate" hreflang="x-default" href="https://systemic.fabiopulito.com/en/">
+
     <!-- Open Graph / LinkedIn Preview Cards -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://systemic.fabiopulito.com/it/">
@@ -66,10 +70,11 @@
             font-weight: 500;
             letter-spacing: 0;
             color: var(--accent-muted);
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border-color);
             border-radius: 0;
-            padding: 2px 4px;
+            padding: 2px 0;
             cursor: pointer;
             max-width: 9.5em;
         }
@@ -77,7 +82,7 @@
         .lang-switch select:hover,
         .lang-switch select:focus {
             color: var(--text-color);
-            border-color: var(--text-color);
+            border-bottom-color: var(--text-color);
             outline: none;
         }
 
@@ -279,7 +284,7 @@
             <div class="top-bar">
                 <span class="site-name">Fabio Pulito</span>
                 <div class="lang-switch">
-                    <select aria-label="Lingua" onchange="if (this.value) location.href = this.value;">
+                    <select aria-label="Lingua">
                         <option value="/en/">English</option>
                         <option value="/it/" selected>Italiano</option>
                     </select>
@@ -388,6 +393,42 @@
         <p class="copyright">© 2026 Fabio Pulito</p>
 
     </div>
+
+    <script>
+    (function () {
+        var sel = document.querySelector('.lang-switch select');
+        if (!sel) return;
+        var initial = sel.value;
+        var fromKeyboard = false;
+
+        function go() {
+            var next = sel.value;
+            if (!next || next === initial) return;
+            window.location.href = next;
+        }
+
+        sel.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'Home' || e.key === 'End' || e.key === 'PageUp' || e.key === 'PageDown') {
+                fromKeyboard = true;
+            }
+            if (e.key === 'Enter') {
+                fromKeyboard = false;
+                go();
+            }
+        });
+
+        sel.addEventListener('change', function () {
+            if (fromKeyboard) return;
+            go();
+        });
+
+        sel.addEventListener('blur', function () {
+            if (!fromKeyboard) return;
+            fromKeyboard = false;
+            go();
+        });
+    })();
+    </script>
 
 </body>
 </html>
