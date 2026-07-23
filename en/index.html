@@ -64,65 +64,26 @@
             color: var(--accent-muted);
         }
 
-        .lang-switch {
-            position: relative;
+        .lang-switch select {
+            font-family: inherit;
             font-size: 12px;
             font-weight: 500;
-        }
-
-        .lang-switch summary {
+            letter-spacing: 0;
             color: var(--accent-muted);
+            background-color: transparent;
+            border: none;
             border-bottom: 1px solid var(--border-color);
-            cursor: pointer;
-            list-style: none;
+            border-radius: 0;
             padding: 2px 0;
+            cursor: pointer;
+            max-width: 9.5em;
         }
 
-        .lang-switch summary::-webkit-details-marker {
-            display: none;
-        }
-
-        .lang-switch summary:hover,
-        .lang-switch summary:focus {
+        .lang-switch select:hover,
+        .lang-switch select:focus {
             color: var(--text-color);
             border-bottom-color: var(--text-color);
             outline: none;
-        }
-
-        .lang-switch[open] summary {
-            color: var(--text-color);
-            border-bottom-color: var(--text-color);
-        }
-
-        .lang-switch ul {
-            position: absolute;
-            right: 0;
-            top: 100%;
-            margin: 4px 0 0 0;
-            padding: 6px 0;
-            list-style: none;
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            min-width: 7em;
-            z-index: 10;
-        }
-
-        .lang-switch a {
-            display: block;
-            padding: 4px 12px;
-            color: var(--accent-muted);
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        .lang-switch a:hover,
-        .lang-switch a:focus {
-            color: var(--text-color);
-        }
-
-        .lang-switch a[aria-current="page"] {
-            color: var(--text-color);
-            font-weight: 600;
         }
 
         h1 {
@@ -322,13 +283,12 @@
         <header>
             <div class="top-bar">
                 <span class="site-name">Fabio Pulito</span>
-                <details class="lang-switch">
-                    <summary aria-label="Language">English</summary>
-                    <ul>
-                        <li><a href="/en/" hreflang="en" lang="en" aria-current="page">English</a></li>
-                        <li><a href="/it/" hreflang="it" lang="it">Italiano</a></li>
-                    </ul>
-                </details>
+                <div class="lang-switch">
+                    <select aria-label="Language">
+                        <option value="/en/" selected>English</option>
+                        <option value="/it/">Italiano</option>
+                    </select>
+                </div>
             </div>
             <div class="title-row">
                 <h1>Systemic Architect</h1>
@@ -435,11 +395,41 @@
     </div>
 
     <script>
-    document.addEventListener('click', function (e) {
-        document.querySelectorAll('details.lang-switch[open]').forEach(function (panel) {
-            if (!panel.contains(e.target)) panel.removeAttribute('open');
+    (function () {
+        var sel = document.querySelector('.lang-switch select');
+        if (!sel) return;
+        var initial = sel.value;
+        var suppressChange = false;
+
+        function go() {
+            var next = sel.value;
+            if (!next || next === initial) return;
+            window.location.href = next;
+        }
+
+        sel.addEventListener('keydown', function (e) {
+            if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'Home' || e.key === 'End' || e.key === 'PageUp' || e.key === 'PageDown') {
+                suppressChange = true;
+            }
+            if (e.key === 'Enter') {
+                // Stop the native menu from consuming the first Enter.
+                e.preventDefault();
+                go();
+            }
         });
-    });
+
+        sel.addEventListener('change', function () {
+            if (suppressChange) {
+                suppressChange = false;
+                return;
+            }
+            go();
+        });
+
+        sel.addEventListener('blur', function () {
+            go();
+        });
+    })();
     </script>
 
 </body>
